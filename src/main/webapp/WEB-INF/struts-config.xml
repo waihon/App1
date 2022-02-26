@@ -16,7 +16,7 @@
                 name="CustomerForm"
                 scope="request"
                 validate="true"
-                input="CustomerDetails.jsp">
+                input="/CustomerDetails.jsp">
             <forward name="success" path="/Success.jsp" />
             <forward name="failure" path="/Failure.jsp" />
         </action>
