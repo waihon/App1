@@ -10,10 +10,12 @@ import org.apache.struts.action.ActionMapping;
 public class CustomerForm extends ActionForm {
     private String firstName;
     private String lastName;
+    private String step;
 
     public CustomerForm() {
         firstName = "";
         lastName = "";
+        step = "";
     }
 
     public String getFirstName() {
@@ -30,6 +32,14 @@ public class CustomerForm extends ActionForm {
 
     public void setLastName(String s) {
         this.lastName = s;
+    }
+
+    public String getStep() {
+        return step;
+    }
+
+    public void setStep(String s) {
+        this.step = s;
     }
 
     @Override
