@@ -21,12 +21,17 @@ public class CustomerAction extends Action {
         }
 
         CustomerForm custForm = (CustomerForm)form;
-        String firstName = custForm.getFirstName();
-        String lastName = custForm.getLastName();
-        System.out.println("Customer First Name is " + firstName);
-        System.out.println("Customer Last Name is " + lastName);
+        ActionForward forward = null;
 
-        ActionForward forward = mapping.findForward("success");
+        if (custForm.getStep().equals("Save Me")) {
+          System.out.println("Save Me button clicked");
+          String firstName = custForm.getFirstName();
+          String lastName = custForm.getLastName();
+          System.out.println("Customer First Name is " + firstName);
+          System.out.println("Customer Last Name is " + lastName);
+
+          forward = mapping.findForward("success");
+        }
         return forward;
     }
 }

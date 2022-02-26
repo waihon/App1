@@ -18,7 +18,7 @@
       <bean:message key="prompt.customer.lastname" />:
       <html:text property="lastName" size="16" maxlength="16" />
       <br />
-      <html:submit>
+      <html:submit property="step">
         <bean:message key="button.save" />
       </html:submit>
       &nbsp;
