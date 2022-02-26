@@ -7,7 +7,7 @@
     </form-beans>
 
     <global-forwards>
-        <forward name="mainpage" path="index.jsp" />
+        <forward name="mainpage" path="/index.jsp" />
     </global-forwards>
 
     <action-mappings>
@@ -17,8 +17,8 @@
                 scope="request"
                 validate="true"
                 input="CustomerDetails.jsp">
-            <forward name="success" path="Success.jsp" />
-            <forward name="failure" path="Failure.jsp" />
+            <forward name="success" path="/Success.jsp" />
+            <forward name="failure" path="/Failure.jsp" />
         </action>
     </action-mappings>
 
