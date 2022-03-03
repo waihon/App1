@@ -22,6 +22,10 @@
         <bean:message key="button.save" />
       </html:submit>
       &nbsp;
+      <html:submit property="step">
+        <bean:message key="button.spike" />
+      </html:submit>
+      &nbsp;
       <html:cancel>
         <bean:message key="button.cancel" />
       </html:cancel>

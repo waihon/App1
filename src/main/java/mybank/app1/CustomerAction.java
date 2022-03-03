@@ -31,6 +31,10 @@ public class CustomerAction extends Action {
           System.out.println("Customer Last Name is " + lastName);
 
           forward = mapping.findForward("success");
+        } else if (custForm.getStep().equals("Spike Me")) {
+          System.out.println("Spike Me button clicked");
+
+          forward = mapping.findForward("failure");
         }
         return forward;
     }
