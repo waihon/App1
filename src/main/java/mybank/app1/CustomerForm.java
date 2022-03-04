@@ -2,10 +2,12 @@ package mybank.app1;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.struts.Globals;
 import org.apache.struts.action.ActionError;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.util.MessageResources;
 
 public class CustomerForm extends ActionForm {
     private String firstName;
@@ -47,8 +49,10 @@ public class CustomerForm extends ActionForm {
                                  HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         if (firstName == null || firstName.trim().equals("")) {
-            String[] fieldNames = {"First Name"};
-            errors.add("firstName", new ActionError("error.required", fieldNames));
+            MessageResources msgRes =
+               (MessageResources)request.getAttribute(Globals.MESSAGES_KEY);
+            String fieldName = msgRes.getMessage("prompt.customer.firstname");
+            errors.add("firstName", new ActionError("error.required", fieldName));
         }
         return errors;
     }
