@@ -47,7 +47,8 @@ public class CustomerForm extends ActionForm {
                                  HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         if (firstName == null || firstName.trim().equals("")) {
-            errors.add("firstName", new ActionError("error.required", "First Name"));
+            String[] fieldNames = {"First Name"};
+            errors.add("firstName", new ActionError("error.required", fieldNames));
         }
         return errors;
     }
