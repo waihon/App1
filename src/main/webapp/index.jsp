@@ -10,6 +10,6 @@
   </head>
 
   <body>
-    <html:link page="/CustomerDetails.jsp">Customer Form</html:link>
+    <html:link forward="CustomerDetailsPage">Customer Form</html:link>
   </body>
 </html:html>

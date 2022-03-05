@@ -8,6 +8,8 @@
 
     <global-forwards>
         <forward name="mainpage" path="/index.jsp" />
+        <forward name="CustomerDetailsPage"
+                 path="/gotoCustomerDetails.do" />
     </global-forwards>
 
     <action-mappings>
@@ -20,6 +22,9 @@
             <forward name="success" path="/Success.jsp" />
             <forward name="failure" path="/Failure.jsp" />
         </action>
+        <action path="/gotoCustomerDetails"
+                parameter="/CustomerDetails.jsp"
+                type="org.apache.struts.actions.ForwardAction" />
     </action-mappings>
 
     <controller processorClass="org.apache.struts.action.RequestProcessor" />
