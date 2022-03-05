@@ -10,6 +10,7 @@
   </head>
 
   <body>
-    <h1>My First Struts Application is a Failure.</h1> 
+    <h1>My First Struts Application is a Failure.</h1>
+    <jsp:include page="/legacyA.do" />
   </body>
 </html:html>
