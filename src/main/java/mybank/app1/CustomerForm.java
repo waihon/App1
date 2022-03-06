@@ -1,15 +1,14 @@
 package mybank.app1;
 
+import java.io.Serializable;
+
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.struts.Globals;
-import org.apache.struts.action.ActionError;
-import org.apache.struts.action.ActionErrors;
-import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
-import org.apache.struts.util.MessageResources;
+import org.apache.struts.validator.ValidatorForm;
 
-public class CustomerForm extends ActionForm {
+public final class CustomerForm extends ValidatorForm implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String firstName;
     private String lastName;
     private String step;
@@ -44,16 +43,16 @@ public class CustomerForm extends ActionForm {
         this.step = s;
     }
 
+    /**
+     * Reset all properties to their default values.
+     *
+     * @param mapping The mapping used to select this instance
+     * @param request The servlet request we are processing
+     */
     @Override
-    public ActionErrors validate(ActionMapping mapping,
-                                 HttpServletRequest request) {
-        ActionErrors errors = new ActionErrors();
-        if (firstName == null || firstName.trim().equals("")) {
-            MessageResources msgRes =
-               (MessageResources)request.getAttribute(Globals.MESSAGES_KEY);
-            String fieldName = msgRes.getMessage("prompt.customer.firstname");
-            errors.add("firstName", new ActionError("error.required", fieldName));
-        }
-        return errors;
+    public void reset(ActionMapping mapping, HttpServletRequest request) {
+        firstName = null;
+        lastName = null;
+        step = null;
     }
 }

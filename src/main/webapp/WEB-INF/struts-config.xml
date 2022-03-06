@@ -39,4 +39,10 @@
     <controller processorClass="org.apache.struts.action.RequestProcessor" />
 
     <message-resources parameter="mybank.app1.App1Messages" />
+
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property property="pathnames"
+                      value="/WEB-INF/validator-rules.xml,
+                             /WEB-INF/validation.xml" />
+    </plug-in>
 </struts-config>
