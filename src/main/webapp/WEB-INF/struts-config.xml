@@ -19,8 +19,8 @@
                 scope="request"
                 validate="true"
                 input="/gotoCustomerDetails.do">
-            <forward name="success" path="/gotoSuccess.do" />
-            <forward name="failure" path="/gotoFailure.do" />
+            <forward name="success" path="/gotoSuccess.do" redirect="true" />
+            <forward name="failure" path="/gotoFailure.do" redirect="true" />
         </action>
         <action path="/gotoCustomerDetails"
                 parameter="/WEB-INF/CustomerDetails.jsp"
